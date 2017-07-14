@@ -111,9 +111,9 @@ public final class PhoneNumberKit: NSObject {
     /// - parameter country: ISO 639 compliant region code.
     ///
     /// - returns: international country code (e.g. 33 for France).
-    public func countryCode(for country: String) -> UInt64? {
+    public func countryCode(for country: String) -> UInt64 {
         let results = metadataManager.filterTerritories(byCountry: country)?.countryCode
-        return results
+        return results ?? 0
     }
     
     /// Get leading digits for an ISO 639 compliant region code.
